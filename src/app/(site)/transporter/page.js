@@ -25,7 +25,7 @@ const page = () => {
           <TrustedByTransporter />
           <WhatsAppLiveChat />
           <InsuranceProtection />
-          
+        
     </div>
   )
 }
