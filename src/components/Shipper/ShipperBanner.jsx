@@ -24,9 +24,9 @@ const ShipperBanner = () => {
           className="w-full bg-gray-50 pl-11 pr-4 py-3 text-sm text-gray-800 rounded-lg border border-transparent focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all placeholder-gray-800 font-medium"
         />
       </div>
-    </div>
+    </div>  
   );
-
+[]
   return (
     <div className="relative w-full h-screen overflow-hidden">
       {/* Background Image */}
@@ -35,8 +35,12 @@ const ShipperBanner = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: "url('/semi-truck.png')",
+
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
         }}
       >  
+        
        
         {/* Subtle overlay */}
         <div className="absolute inset-0 bg-black/30"></div>

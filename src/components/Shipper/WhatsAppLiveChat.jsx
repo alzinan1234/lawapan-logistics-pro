@@ -16,18 +16,20 @@ const WhatsAppLiveChat = () => {
             <div className="absolute inset-0 bg-[#8DD800] rounded-full blur-3xl opacity-30 animate-pulse"></div>
             <div className="relative bg-[#8DD800] p-6 rounded-full shadow-2xl">
               <MessageCircle size={56} className="text-white" strokeWidth={1.5} />
+        
             </div>
           </div>
 
           {/* Heading */}
           <div className="text-center space-y-2">
             <h1 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight">
-              WhatsApp Live Chat
+              
             </h1>
             <p className="text-gray-500 text-lg font-light">
               Connect with us instantly
             </p>
-          </div>
+          </div>  
+
 
           {/* CTA Button */}
           <button 
@@ -39,18 +41,18 @@ const WhatsAppLiveChat = () => {
             
             {/* Button Content */}
             <div className="relative flex items-center justify-center gap-2">
+               
               <MessageCircle size={20} className="group-hover:rotate-12 transition-transform duration-300" />
               <span>Join Chat</span>
             </div>
           </button>
-
           {/* Decorative Elements */}
           <div className="absolute top-10 left-10 w-32 h-32 bg-green-200 rounded-full mix-blend-multiply filter blur-2xl opacity-20 animate-blob"></div>
           <div className="absolute bottom-10 right-10 w-32 h-32 bg-green-300 rounded-full mix-blend-multiply filter blur-2xl opacity-20 animate-blob animation-delay-2000"></div>
         </div>
       </div>
 
-      {/* CSS Animation Keyframes */}-----
+      {/* CSS Animation Keyframes */}
       <style jsx>{`
         @keyframes blob {
           0%, 100% {
@@ -58,7 +60,7 @@ const WhatsAppLiveChat = () => {
           }
           33% {
             transform: translate(30px, -50px) scale(1.1);
-          }
+          }     
           66% {
             transform: translate(-20px, 20px) scale(0.9);
           }
@@ -66,8 +68,7 @@ const WhatsAppLiveChat = () => {
 
         .animate-blob {
           animation: blob 7s infinite;
-        }
-
+        }  
         .animation-delay-2000 {
           animation-delay: 2s;
         }
