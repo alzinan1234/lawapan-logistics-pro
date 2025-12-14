@@ -37,8 +37,7 @@ const ServicesSection = () => {
             Discover the simplicity and reliability of renting our quality trucks through our streamlined process. 
             Effortlessly book and confirm your selected vehicle online for a smooth and dependable experience
           </p>
-        </div>
-
+        </div> 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {services.map((service, index) => (
@@ -50,12 +49,10 @@ const ServicesSection = () => {
               <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm">
                 {service.icon}
               </div>
-
               {/* Title */}
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
                 {service.title}
               </h3>
-
               {/* Description */}
               <p className="text-gray-700 text-sm md:text-base leading-relaxed">
                 {service.description}

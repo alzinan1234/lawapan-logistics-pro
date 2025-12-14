@@ -72,7 +72,6 @@ const LastFreightOffers = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8">
           Last Freight Offers
         </h2>
-
         {/* Offers List */}
         <div className="space-y-4">
           {offers.map((offer) => (
@@ -91,7 +90,7 @@ const LastFreightOffers = () => {
                       <rect x="16" y="0" width="8" height="3" fill="#ED2939"/>
                       <rect x="8" y="3" width="8" height="26" fill="white"/>
                       <rect x="0" y="3" width="8" height="26" fill="#002395"/>
-                      <rect x="16" y="3" width="8" height="26" fill="#ED2939"/>
+                      <rect x="16" y="3" width="8" height="26" fill="#ED2939"/>   
                     </svg>
                   </div>
                   <div>
@@ -103,7 +102,6 @@ const LastFreightOffers = () => {
 
                 {/* Arrow/Separator */}
                 <div className="hidden md:block text-gray-400 px-2">→</div>
-
                 {/* To Location */}
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-8 flex items-center justify-center">
