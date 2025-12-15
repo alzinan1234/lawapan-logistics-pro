@@ -7,6 +7,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
+
   const isActive = (path) => pathname === path;
 
   return (
@@ -83,7 +84,9 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-
+      <div>
+         
+      </div>
       {/* Mobile Menu */}
       <div className={`md:hidden border-t border-gray-200 overflow-hidden transition-all duration-500 ease-in-out ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
         <div className="px-4 pt-2 pb-4 space-y-2">
