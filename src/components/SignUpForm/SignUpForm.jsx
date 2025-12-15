@@ -314,6 +314,7 @@ export default function SignUpForm() {
           </div>
 
           {/* Transporter Specific Fields */}
+
           {role === 'transporter' && (
             <>
               {/* Number of Trucks */}
