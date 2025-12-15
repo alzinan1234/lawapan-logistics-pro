@@ -1,6 +1,7 @@
 // components/SignUpForm.js
 "use client";
 
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function SignUpForm() {
@@ -519,9 +520,9 @@ export default function SignUpForm() {
           <div className="text-center pt-4">
             <p className="text-gray-600">
               Already have an account?{' '}
-              <a href="#" className="text-blue-600 hover:underline font-medium">
+              <Link href="/login" className="text-blue-600 hover:underline font-medium">
                 Log in
-              </a>
+              </Link>
             </p>
           </div>
         </form>

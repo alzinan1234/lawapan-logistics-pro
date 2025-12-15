@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 // Assuming 'lucide-react' is installed for the icons
 import { Eye, EyeOff } from 'lucide-react';
+import Link from 'next/link';
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({
@@ -24,7 +25,6 @@ export default function LoginPage() {
       setErrors(prev => ({ ...prev, [name]: '' }));
     }
   };
-
   const validateForm = () => {
     const newErrors = {};
 
@@ -71,6 +71,7 @@ export default function LoginPage() {
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
 
       {/* Logo Container - Ensure the logo path is correct */}
+    
       
 
       {/* Login Form Card - Added 'rounded-xl' and adjusted padding for closer match */}
@@ -92,6 +93,7 @@ export default function LoginPage() {
         <p className="text-center text-gray-500 text-sm mb-8"> 
           Please enter your email and password to continue
         </p>
+          
 
         <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
           {/* Email Field */}
@@ -185,13 +187,15 @@ export default function LoginPage() {
         {/* Sign Up Link */}
         <p className="text-center text-sm text-gray-600 mt-6">
           Don't have account?{' '}
+        <Link href="/signup">
           <button
             type="button"
             className="text-blue-700 hover:text-blue-800 font-medium transition" // Adjusted color and bolding for links
-            onClick={() => alert('Sign up functionality would be implemented here')}
+            // onClick={() => alert('Sign up functionality would be implemented here')}
           >
             Sign Up
           </button>
+        </Link>
         </p>
       </div>
     </div>
