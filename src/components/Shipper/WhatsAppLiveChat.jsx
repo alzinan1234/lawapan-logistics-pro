@@ -16,7 +16,6 @@ const WhatsAppLiveChat = () => {
             <div className="absolute inset-0 bg-[#8DD800] rounded-full blur-3xl opacity-30 animate-pulse"></div>
             <div className="relative bg-[#8DD800] p-6 rounded-full shadow-2xl">
               <MessageCircle size={56} className="text-white" strokeWidth={1.5} />
-        
             </div>
           </div>
 
@@ -29,16 +28,16 @@ const WhatsAppLiveChat = () => {
               Connect with us instantly
             </p>
           </div>  
-
-
+          <div>
+              <h1 className='text-black text-4xl font-bold'>WhatsApp Live Chat</h1>
+            </div>
           {/* CTA Button */}
           <button 
             onClick={() => window.open('https://wa.me', '_blank')}
             className="group relative px-8 py-4 bg-[#8DD800] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95"
           >
             {/* Button Glow Effect */}
-            <div className="absolute inset-0 bg-[#8DD800] rounded-full blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-            
+            <div className="absolute inset-0 bg-[#8DD800] rounded-full blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>        
             {/* Button Content */}
             <div className="relative flex items-center justify-center gap-2">
                
@@ -51,7 +50,6 @@ const WhatsAppLiveChat = () => {
           <div className="absolute bottom-10 right-10 w-32 h-32 bg-green-300 rounded-full mix-blend-multiply filter blur-2xl opacity-20 animate-blob animation-delay-2000"></div>
         </div>
       </div>
-
       {/* CSS Animation Keyframes */}
       <style jsx>{`
         @keyframes blob {
@@ -65,7 +63,6 @@ const WhatsAppLiveChat = () => {
             transform: translate(-20px, 20px) scale(0.9);
           }
         }
-
         .animate-blob {
           animation: blob 7s infinite;
         }  

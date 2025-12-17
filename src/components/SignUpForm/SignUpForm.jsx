@@ -1,5 +1,6 @@
 // components/SignUpForm.js
 "use client";
+import { User, Truck } from 'lucide-react';
 
 import Link from 'next/link';
 import { useState } from 'react';
@@ -205,29 +206,57 @@ export default function SignUpForm() {
         <p className="text-gray-600">Join thousands of businesses and transporters</p>
       </div>
         {/* Role Selection */}
-        <div className="mb-8">
-          <div className="flex space-x-4 mb-4">
-            <button
-              type="button"
-              onClick={() => handleRoleChange('shipper')}
-              className={`flex-1 py-3 px-4 rounded-lg border-2 text-center transition-all ${role === 'shipper' ? 'border-blue-600 bg-blue-50 text-blue-700' : 'border-gray-200 text-gray-700 hover:border-gray-300'}`}
-            >
-              <div className="font-medium">I'm a shipper</div>
-              <div className="text-sm text-gray-500 mt-1">I need to ship goods</div>
-            </button>
-            
-            <button
-              type="button"
-              onClick={() => handleRoleChange('transporter')}
-              className={`flex-1 py-3 px-4 rounded-lg border-2 text-center transition-all ${role === 'transporter' ? 'border-blue-600 bg-blue-50 text-blue-700' : 'border-gray-200 text-gray-700 hover:border-gray-300'}`}
-            >
-              <div className="font-medium">I'm a Transporter</div>
-              <div className="text-sm text-gray-500 mt-1">I have trucks to offer</div>
-            </button>
-          </div>
-          
-          <div className="h-px bg-gray-200"></div>
+       <div className="mb-8">
+  <div className="flex flex-col sm:flex-row gap-4 mb-4">
+    {/* Shipper Button */}
+    <button
+      type="button"
+      onClick={() => handleRoleChange('shipper')}
+      className={`flex-1 p-6 rounded-xl border-2 text-center transition-all duration-200 ${
+        role === 'shipper' 
+        ? 'border-blue-500 bg-blue-50/50 ring-1 ring-blue-500' 
+        : 'border-gray-100 bg-gray-50 text-gray-700 hover:border-gray-200'
+      }`}
+    >
+      <div className="flex flex-col items-center gap-3">
+        <div className={`w-12 h-12 rounded-full flex items-center justify-center border ${
+          role === 'shipper' ? 'bg-white border-blue-200 shadow-sm' : 'bg-white border-gray-200'
+        }`}>
+          <User className={`w-6 h-6 ${role === 'shipper' ? 'text-blue-600' : 'text-gray-400'}`} />
         </div>
+        <div>
+          <div className={`font-bold text-lg ${role === 'shipper' ? 'text-gray-900' : 'text-gray-600'}`}>I'm a shipper</div>
+          <div className="text-xs text-gray-500 mt-1">I need to ship goods</div>
+        </div>
+      </div>
+    </button>
+    
+    {/* Transporter Button */}
+    <button
+      type="button"
+      onClick={() => handleRoleChange('transporter')}
+      className={`flex-1 p-6 rounded-xl border-2 text-center transition-all duration-200 ${
+        role === 'transporter' 
+        ? 'border-blue-500 bg-blue-50/50 ring-1 ring-blue-500' 
+        : 'border-gray-100 bg-gray-50 text-gray-700 hover:border-gray-200'
+      }`}
+    >
+      <div className="flex flex-col items-center gap-3">
+        <div className={`w-12 h-12 rounded-full flex items-center justify-center border ${
+          role === 'transporter' ? 'bg-white border-blue-200 shadow-sm' : 'bg-white border-gray-200'
+        }`}>
+          <Truck className={`w-6 h-6 ${role === 'transporter' ? 'text-blue-600' : 'text-gray-400'}`} />
+        </div>
+        <div>
+          <div className={`font-bold text-lg ${role === 'transporter' ? 'text-gray-900' : 'text-gray-600'}`}>I'm a Transporter</div>
+          <div className="text-xs text-gray-500 mt-1">I have trucks to offer</div>
+        </div>
+      </div>
+    </button>
+  </div>
+  
+  <div className="h-px bg-gray-100 mt-6"></div>
+</div>
 
         {/* Form Title */}
         <h2 className="text-xl font-semibold text-gray-900 mb-6">
