@@ -17,7 +17,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/" className="">
             <div className="">
-           <img className='w-[67px] h-[66px]' src="./web-logo.png" alt="" />
+           <img className='w-[67px] h-[60px]' src="/web-logo.png" alt="" />
             </div>
           </Link>
 
@@ -47,11 +47,11 @@ const Navbar = () => {
               </span>
               <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform origin-left transition-transform duration-300 ${isActive('/faq') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
             </Link>
-            <Link href="/dashboard" className="relative group py-2">
-              <span className={`font-medium transition-colors duration-300 ${isActive('/dashboard') ? 'text-blue-600' : 'text-gray-700 group-hover:text-blue-600'}`}>
+            <Link href="/dashboard/Shipper" className="relative group py-2">
+              <span className={`font-medium transition-colors duration-300 ${isActive('/dashboard/Shipper') ? 'text-blue-600' : 'text-gray-700 group-hover:text-blue-600'}`}>
                 Dashboard
               </span>
-              <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform origin-left transition-transform duration-300 ${isActive('/dashboard') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
+              <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform origin-left transition-transform duration-300 ${isActive('/dashboard/Shipper  ') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
             </Link>
           </div>
 
@@ -102,7 +102,7 @@ const Navbar = () => {
           <Link href="/faq" className={`block px-3 py-2 rounded-md font-medium transition-all duration-300 transform ${isActive('/faq') ? 'text-blue-600 bg-blue-50 border-l-4 border-blue-600' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50 hover:translate-x-1'}`}>
             FAQ
           </Link>
-          <Link href="/dashboard" className={`block px-3 py-2 rounded-md font-medium transition-all duration-300 transform ${isActive('/dashboard') ? 'text-blue-600 bg-blue-50 border-l-4 border-blue-600' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50 hover:translate-x-1'}`}>
+          <Link href="/dashboard/Shipper" className={`block px-3 py-2 rounded-md font-medium transition-all duration-300 transform ${isActive('/dashboard') ? 'text-blue-600 bg-blue-50 border-l-4 border-blue-600' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50 hover:translate-x-1'}`}>
             Dashboard
           </Link>
           <div className=" flex gap-3 pt-4 space-y-2">

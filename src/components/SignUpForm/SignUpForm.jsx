@@ -257,7 +257,6 @@ export default function SignUpForm() {
   
   <div className="h-px bg-gray-100 mt-6"></div>
 </div>
-
         {/* Form Title */}
         <h2 className="text-xl font-semibold text-gray-900 mb-6">
           {role === 'transporter' ? 'Company Details' : 'Basic information'}
@@ -299,7 +298,7 @@ export default function SignUpForm() {
               <p className="mt-1 text-sm text-red-600">{errors.email}</p>
             )}
           </div>
-
+            {/* */}
           {/* Phone Number */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -433,7 +432,6 @@ export default function SignUpForm() {
                   </div>
                 )}
               </div>
-
               {/* Company Logo */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -463,7 +461,6 @@ export default function SignUpForm() {
               </div>
             </>
           )}
-
           {/* Password */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -481,7 +478,6 @@ export default function SignUpForm() {
               <p className="mt-1 text-sm text-red-600">{errors.password}</p>
             )}
           </div>
-
           {/* Confirm Password */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -517,7 +513,6 @@ export default function SignUpForm() {
                 </a>.
               </label>
             </div>
-
             <div className="flex items-start">
               <input
                 type="checkbox"
