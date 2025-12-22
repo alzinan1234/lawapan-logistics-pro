@@ -92,7 +92,7 @@ export default function SignUpForm() {
         setErrors(prev => ({ ...prev, companyLogo: 'Please upload an image file' }));
         return;
       }
-      setFormData(prev => ({ ...prev, companyLogo: file }));
+      setFormData(prev => ({ ...prev, companyLogo: file }));  
       setErrors(prev => ({ ...prev, companyLogo: '' }));
     }
   };

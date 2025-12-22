@@ -1,9 +1,12 @@
+import BidsSection from '@/components/ShipperAdmin/BidsSection'
+import ShipmentStats from '@/components/ShipperAdmin/ShipmentStats'
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-       <h1>Shipper Page</h1>
+         <ShipmentStats />
+         <BidsSection />
     </div>
   )
 }

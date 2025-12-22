@@ -18,8 +18,8 @@ import {
 import Image from "next/image";
 
 const navItems = [
-  { name: "Dashboard", href: "/admin", icon: LayoutDashboard },
-  { name: "My Shipments", href: "/admin/shipments", icon: Truck },
+  { name: "Dashboard", href: "/dashboard/Shipper", icon: LayoutDashboard },
+  { name: "My Shipments", href: "/dashboard/Shipper/shipments", icon: Truck },
   { name: "Invoices", href: "/admin/invoices", icon: FileText },
   { name: "Issue reported", href: "/admin/issues", icon: AlertCircle },
 ];
