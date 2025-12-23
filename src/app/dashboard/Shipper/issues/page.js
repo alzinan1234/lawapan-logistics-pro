@@ -1,10 +1,10 @@
-import MyShipments from '@/components/ShipperAdmin/Shipments/MyShipments'
+import IssuesPage from '@/components/ShipperAdmin/Issues/IssuesPage'
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-       <MyShipments />
+       <IssuesPage />
     </div>
   )
 }

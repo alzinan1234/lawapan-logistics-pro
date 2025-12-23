@@ -1,8 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
 import {
   LayoutDashboard,
   Truck,
@@ -14,142 +13,161 @@ import {
   User,
   Lock,
   Wallet,
+  Menu,
+  X,
 } from "lucide-react";
-import Image from "next/image";
 
 const navItems = [
   { name: "Dashboard", href: "/dashboard/Shipper", icon: LayoutDashboard },
   { name: "My Shipments", href: "/dashboard/Shipper/shipments", icon: Truck },
-  { name: "Invoices", href: "/admin/invoices", icon: FileText },
-  { name: "Issue reported", href: "/admin/issues", icon: AlertCircle },
+  { name: "Invoices", href: "/dashboard/Shipper/invoices", icon: FileText },
+  { name: "Issue reported", href: "/dashboard/Shipper/issues", icon: AlertCircle },
 ];
 
 const settingsDropdown = [
-  { name: "Edit Profile", href: "/admin/settings/profile", icon: User },
-  { name: "Change Password", href: "/admin/settings/password", icon: Lock },
-  { name: "Bank Details", href: "/admin/settings/bank", icon: Wallet },
+  { name: "Edit Profile", href: "/dashboard/Shipper/settings/profile", icon: User },
+  // { name: "Change Password", href: "/dashboard/Shipper/settings/password", icon: Lock },
+  { name: "Bank Details", href: "/dashboard/Shipper/settings/bank", icon: Wallet },
 ];
 
 const Sidebar = ({ isOpen, setIsOpen }) => {
   const pathname = usePathname();
   const [settingsOpen, setSettingsOpen] = useState(false);
 
-  return (
-    <>
-      <aside
-        className={`fixed top-0 left-0 h-full bg-white text-black shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
-          isOpen ? "translate-x-0 w-64" : "-translate-x-full w-64"
-        }`}
-      >
-        <div className="flex flex-col h-full justify-between border-r border-[#D6D6D6]">
-          {/* Logo & Close Button */}
-          <div className="flex items-center justify-between border-b border-[#D6D6D6] py-5 px-[10px]">
-            <button
-              onClick={() => setIsOpen(false)}
-              className="p-2 hover:bg-gray-100 rounded text-[#000]"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="21"
-                height="8"
-                viewBox="0 0 21 8"
-                fill="none"
-              >
-                <path
-                  d="M1.5 1H19.5"
-                  stroke="#242323"
-                  strokeWidth={1.5}
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M1.5 7H19.5"
-                  stroke="#252525"
-                  strokeWidth={1.5}
-                  strokeLinecap="round"
-                />
-              </svg>
-            </button>
-          </div>
+  useEffect(() => {
+    if (!isOpen) setSettingsOpen(false);
+  }, [isOpen]);
 
-          {/* Navigation Items */}
-          <nav className="mt-4 space-y-2 flex-grow overflow-y-auto px-4">
-            {navItems.map(({ name, href, icon: Icon }) => {
-              const isActive = pathname === href;
-              return (
-                <Link
-                  key={name}
-                  href={href}
-                  className={`flex items-center px-4 py-3 rounded transition-all ${
-                    isActive
-                      ? "bg-blue-600 text-white"
-                      : "text-gray-700 hover:bg-gray-100"
+  return (
+    <aside
+      className={`fixed top-16 left-0 h-[calc(100vh-4rem)] bg-white text-black shadow-lg z-40 
+      transition-all duration-300 ease-in-out border-r border-[#D6D6D6] overflow-x-hidden
+      ${isOpen ? "w-64" : "w-20"}`}
+    >
+      <div className="flex flex-col h-full overflow-y-auto no-scrollbar">
+        
+        {/* Header Section */}
+        <div className={`flex items-center h-16 border-b border-[#D6D6D6] flex-shrink-0 transition-all duration-300 ${isOpen ? "px-6 justify-between" : "justify-center"}`}>
+          {isOpen && (
+            <span className="font-bold text-blue-600 text-lg whitespace-nowrap overflow-hidden">
+              LAWAPAN
+            </span>
+          )}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-2 hover:bg-gray-100 rounded-md transition-colors text-gray-600"
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+
+        {/* Navigation Items */}
+        <nav className="mt-4 flex-grow px-3 space-y-2">
+          {navItems.map(({ name, href, icon: Icon }) => {
+            const isActive = pathname === href;
+            return (
+              <Link
+                key={name}
+                href={href}
+                className={`flex items-center h-12 rounded-lg transition-all relative group ${
+                  isActive
+                    ? "bg-blue-600 text-white shadow-md shadow-blue-200"
+                    : "text-gray-600 hover:bg-gray-50 hover:text-blue-600"
+                } ${!isOpen ? "justify-center" : "px-3"}`}
+              >
+                <Icon className="w-5 h-5 flex-shrink-0" />
+                
+                <span
+                  className={`ml-3 font-medium text-sm whitespace-nowrap transition-all duration-300 ${
+                    isOpen ? "opacity-100 w-auto visible" : "opacity-0 w-0 invisible absolute"
                   }`}
                 >
-                  <Icon className="w-5 h-5 mr-3" />
-                  <span className="font-normal text-sm">{name}</span>
-                </Link>
-              );
-            })}
+                  {name}
+                </span>
 
-            {/* Settings Dropdown */}
-            <div className="mt-6">
-              <button
-                onClick={() => setSettingsOpen(!settingsOpen)}
-                className={`w-full flex items-center justify-between px-4 py-3 rounded transition-all ${
-                  settingsOpen
-                    ? "bg-blue-600 text-white"
-                    : "text-gray-700 hover:bg-gray-100"
-                }`}
-              >
-                <div className="flex items-center">
-                  <Settings className="w-5 h-5 mr-3" />
-                  <span className="font-normal text-sm">Settings</span>
-                </div>
+                {!isOpen && (
+                  <div className="absolute left-16 bg-gray-900 text-white text-xs rounded py-1.5 px-3 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-nowrap shadow-xl">
+                    {name}
+                  </div>
+                )}
+              </Link>
+            );
+          })}
+
+          {/* Settings Section - Fixed Alignment */}
+          <div className="pt-2">
+            <button
+              onClick={() => isOpen && setSettingsOpen(!settingsOpen)}
+              className={`w-full flex items-center h-12 rounded-lg transition-all relative group ${
+                settingsOpen && isOpen ? "bg-blue-50 text-blue-600" : "text-gray-600 hover:bg-gray-50"
+              } ${!isOpen ? "justify-center" : "px-3"}`}
+            >
+              <Settings className="w-5 h-5 flex-shrink-0" />
+              
+              <div className={`flex items-center justify-between flex-grow transition-all duration-300 ${
+                isOpen ? "ml-3 opacity-100 visible" : "opacity-0 w-0 invisible absolute"
+              }`}>
+                <span className="font-medium text-sm whitespace-nowrap">Settings</span>
                 <ChevronUp
-                  className={`w-4 h-4 transition-transform ${
-                    settingsOpen ? "rotate-0" : "rotate-180"
-                  }`}
+                  className={`w-4 h-4 transition-transform duration-300 ${settingsOpen ? "rotate-0" : "rotate-180"}`}
                 />
-              </button>
+              </div>
 
-              {/* Settings Submenu */}
-              {settingsOpen && (
-                <div className="mt-2 space-y-1 bg-gray-50 rounded p-2 border border-gray-200">
-                  {settingsDropdown.map(({ name, href, icon: Icon }) => (
+               {!isOpen && (
+                  <div className="absolute left-16 bg-gray-900 text-white text-xs rounded py-1.5 px-3 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-nowrap shadow-xl">
+                    Settings
+                  </div>
+                )}
+            </button>
+
+            {/* Submenu Alignment */}
+            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
+              settingsOpen && isOpen ? "max-h-60 mt-2" : "max-h-0"
+            }`}>
+              <div className="bg-gray-50 rounded-lg p-1 space-y-1 mx-1 border border-gray-100">
+                {settingsDropdown.map(({ name, href, icon: Icon }) => {
+                  const isActive = pathname === href;
+                  return (
                     <Link
                       key={name}
                       href={href}
-                      className="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-600 rounded text-sm transition-all"
+                      className={`flex items-center px-3 py-2 rounded-md text-xs font-medium transition-all ${
+                        isActive
+                          ? "bg-blue-600 text-white shadow-md"
+                          : "text-gray-500 hover:text-blue-600 hover:bg-white"
+                      }`}
                     >
-                      <Icon className="w-4 h-4 mr-3" />
-                      <span>{name}</span>
+                      <Icon className="w-4 h-4 mr-3 flex-shrink-0" />
+                      <span className="whitespace-nowrap">{name}</span>
                     </Link>
-                  ))}
-                </div>
-              )}
+                  );
+                })}
+              </div>
             </div>
+          </div>
+        </nav>
 
-            {/* Logout Button */}
-            <div className="border-t border-[#D6D6D6] pt-6 mt-6">
-              <button className="flex items-center gap-2 text-red-500 hover:text-red-600 px-4 py-2 rounded hover:bg-red-50 transition-all">
-                <LogOut className="w-5 h-5" />
-                <span className="text-sm font-normal">Logout</span>
-              </button>
-            </div>
-          </nav>
+        {/* Logout Button Footer */}
+        <div className="p-3 border-t border-[#D6D6D6] mt-auto">
+          <button className={`flex items-center h-12 w-full text-red-500 hover:bg-red-50 rounded-lg transition-all group relative ${
+            !isOpen ? "justify-center" : "px-3"
+          }`}>
+            <LogOut className="w-5 h-5 flex-shrink-0" />
+            <span className={`ml-3 text-sm font-semibold transition-all duration-300 ${
+              isOpen ? "opacity-100 visible" : "opacity-0 w-0 invisible absolute"
+            }`}>
+              Logout
+            </span>
+            
+            {!isOpen && (
+              <div className="absolute left-16 bg-red-600 text-white text-xs rounded py-1.5 px-3 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 whitespace-nowrap shadow-lg">
+                Logout
+              </div>
+            )}
+          </button>
         </div>
-      </aside>
-
-      {/* Open Button (When Sidebar is Closed) */}
-      {!isOpen && (
-        <button
-          onClick={() => setIsOpen(true)}
-          className="fixed top-4 left-4 z-50 bg-blue-600 text-white p-2 rounded-md shadow-lg flex items-center justify-center hover:bg-blue-700 transition"
-        >
-          <Image src="/bars.png" alt="menu" width={24} height={24} />
-        </button>
-      )}
-    </>
+      </div>
+    </aside>
   );
 };
 

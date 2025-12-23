@@ -1,10 +1,10 @@
-import MyShipments from '@/components/ShipperAdmin/Shipments/MyShipments'
+import Invoices from '@/components/ShipperAdmin/Invoices/Invoices'
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-       <MyShipments />
+        <Invoices />
     </div>
   )
 }
