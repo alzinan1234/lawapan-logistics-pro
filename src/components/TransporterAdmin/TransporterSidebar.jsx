@@ -11,22 +11,28 @@ import {
   ChevronUp,
   LogOut,
   User,
-  Lock,
   Wallet,
   Menu,
   X,
+  CircleDollarSign,
+  Package,
+  Car,
+  UserCircle,
 } from "lucide-react";
 
 const navItems = [
   { name: "Dashboard", href: "/dashboard/Transporter", icon: LayoutDashboard },
-  { name: "My Shipments", href: "/dashboard/Transporter/shipments", icon: Truck },
-  { name: "Invoices", href: "/dashboard/Transporter/invoices", icon: FileText },
+  { name: "Available Bids", href: "/dashboard/Transporter/bids", icon: FileText },
+  { name: "Earning", href: "/dashboard/Transporter/earning", icon: CircleDollarSign },
+  { name: "Active Shipments", href: "/dashboard/Transporter/shipments", icon: Package },
+  { name: "My Vehicles", href: "/dashboard/Transporter/vehicles", icon: Car },
+  { name: "Driver Profiles", href: "/dashboard/Transporter/drivers", icon: UserCircle },
   { name: "Issue reported", href: "/dashboard/Transporter/issues", icon: AlertCircle },
+  { name: "Withdraw requests", href: "/dashboard/Transporter/withdraw", icon: Wallet },
 ];
 
 const settingsDropdown = [
   { name: "Edit Profile", href: "/dashboard/Transporter/settings/profile", icon: User },
-  // { name: "Change Password", href: "/dashboard/Transporter/settings/password", icon: Lock },
   { name: "Bank Details", href: "/dashboard/Transporter/settings/bank", icon: Wallet },
 ];
 
