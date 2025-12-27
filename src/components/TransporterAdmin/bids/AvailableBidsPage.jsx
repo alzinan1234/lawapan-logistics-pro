@@ -5,14 +5,14 @@ import { Search, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 
 // Mock data for available bids
 const mockAvailableBids = [
-  { id: 1, title: "Ship 12 Pallets of Rice", from: "Abidjan", to: "Ouagadougou", minPrice: 1200, maxPrice: 1300, image: "/api/placeholder/200/150" },
-  { id: 2, title: "Ship 12 Pallets of Rice", from: "Abidjan", to: "Ouagadougou", minPrice: 1200, maxPrice: 1300, image: "/api/placeholder/200/150" },
-  { id: 3, title: "Ship 12 Pallets of Rice", from: "Abidjan", to: "Ouagadougou", minPrice: 1200, maxPrice: 1300, image: "/api/placeholder/200/150" },
-  { id: 4, title: "Ship 12 Pallets of Rice", from: "Abidjan", to: "Ouagadougou", minPrice: 1200, maxPrice: 1300, image: "/api/placeholder/200/150" },
-  { id: 5, title: "Ship 12 Pallets of Rice", from: "Abidjan", to: "Ouagadougou", minPrice: 1200, maxPrice: 1300, image: "/api/placeholder/200/150" },
-  { id: 6, title: "Ship 12 Pallets of Rice", from: "Abidjan", to: "Ouagadougou", minPrice: 1200, maxPrice: 1300, image: "/api/placeholder/200/150" },
-  { id: 7, title: "Ship 12 Pallets of Rice", from: "Abidjan", to: "Ouagadougou", minPrice: 1200, maxPrice: 1300, image: "/api/placeholder/200/150" },
-  { id: 8, title: "Ship 12 Pallets of Rice", from: "Abidjan", to: "Ouagadougou", minPrice: 1200, maxPrice: 1300, image: "/api/placeholder/200/150" },
+  { id: 1, title: "Ship 12 Pallets of Rice", from: "Abidjan", to: "Ouagadougou", minPrice: 1200, maxPrice: 1300, image: "https://static-01.daraz.com.bd/p/feafd4647394b1ac024ee541c7103434.jpg" },
+  { id: 2, title: "Ship 12 Pallets of Rice", from: "Abidjan", to: "Ouagadougou", minPrice: 1200, maxPrice: 1300, image: "https://static-01.daraz.com.bd/p/feafd4647394b1ac024ee541c7103434.jpg" },
+  { id: 3, title: "Ship 12 Pallets of Rice", from: "Abidjan", to: "Ouagadougou", minPrice: 1200, maxPrice: 1300, image: "https://static-01.daraz.com.bd/p/feafd4647394b1ac024ee541c7103434.jpg" },
+  { id: 4, title: "Ship 12 Pallets of Rice", from: "Abidjan", to: "Ouagadougou", minPrice: 1200, maxPrice: 1300, image: "https://static-01.daraz.com.bd/p/feafd4647394b1ac024ee541c7103434.jpg" },
+  { id: 5, title: "Ship 12 Pallets of Rice", from: "Abidjan", to: "Ouagadougou", minPrice: 1200, maxPrice: 1300, image: "https://static-01.daraz.com.bd/p/feafd4647394b1ac024ee541c7103434.jpg" },
+  { id: 6, title: "Ship 12 Pallets of Rice", from: "Abidjan", to: "Ouagadougou", minPrice: 1200, maxPrice: 1300, image: "https://static-01.daraz.com.bd/p/feafd4647394b1ac024ee541c7103434.jpg" },
+  { id: 7, title: "Ship 12 Pallets of Rice", from: "Abidjan", to: "Ouagadougou", minPrice: 1200, maxPrice: 1300, image: "https://static-01.daraz.com.bd/p/feafd4647394b1ac024ee541c7103434.jpg" },
+  { id: 8, title: "Ship 12 Pallets of Rice", from: "Abidjan", to: "Ouagadougou", minPrice: 1200, maxPrice: 1300, image: "https://static-01.daraz.com.bd/p/feafd4647394b1ac024ee541c7103434.jpg" },
 ];
 
 const AvailableBidsPage = () => {
@@ -37,7 +37,7 @@ const AvailableBidsPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-7xl mx-auto">
+      <div className=" mx-auto">
         {/* Header */}
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Available Bids</h1>
