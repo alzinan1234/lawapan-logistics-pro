@@ -24,12 +24,12 @@ const navItems = [
   { name: "Dashboard", href: "/dashboard/Transporter", icon: LayoutDashboard },
   { name: "Available Bids", href: "/dashboard/Transporter/bids", icon: FileText },
   { name: "Earning", href: "/dashboard/Transporter/earning", icon: CircleDollarSign },
-  { name: "Active Shipments", href: "/dashboard/Transporter/shipments", icon: Package },
-  { name: "My Vehicles", href: "/dashboard/Transporter/vehicles", icon: Car },
+  { name: "Active Shipments", href: "/dashboard/Transporter/active-shipments", icon: Package },
+  { name: "My Vehicles", href: "/dashboard/Transporter/my-vehicles", icon: Car },
   { name: "Driver Profiles", href: "/dashboard/Transporter/drivers", icon: UserCircle },
   { name: "Issue reported", href: "/dashboard/Transporter/issues", icon: AlertCircle },
   { name: "Withdraw requests", href: "/dashboard/Transporter/withdraw", icon: Wallet },
-];
+]; 
 
 const settingsDropdown = [
   { name: "Edit Profile", href: "/dashboard/Transporter/settings/profile", icon: User },
