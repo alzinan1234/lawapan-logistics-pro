@@ -4,7 +4,8 @@ import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
-import ChangePasswordForm from "./ChangePasswordForm";
+import ChangePasswordFormTransporter from "./ChangePasswordFormTransporter";
+
 
 export default function ProfilePageTransporter() {
   const router = useRouter();
@@ -165,7 +166,7 @@ export default function ProfilePageTransporter() {
               </form>
             </div>
           )}
-          {activeTab === "changePassword" && <ChangePasswordForm />}
+          {activeTab === "changePassword" && <ChangePasswordFormTransporter />}
         </div>
       </div>
     </div>

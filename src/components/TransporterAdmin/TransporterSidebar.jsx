@@ -32,8 +32,8 @@ const navItems = [
 ]; 
 
 const settingsDropdown = [
-  { name: "Edit Profile", href: "/dashboard/Transporter/settings/profile", icon: User },
-  { name: "Bank Details", href: "/dashboard/Transporter/settings/bank", icon: Wallet },
+  { name: "Edit Profile", href: "/dashboard/Transporter/setting/edit-profile-transporter", icon: User },
+  { name: "Bank Details", href: "/dashboard/Transporter/setting/bank-transporter", icon: Wallet },
 ];
 
 const TransporterSidebar = ({ isOpen, setIsOpen }) => {
