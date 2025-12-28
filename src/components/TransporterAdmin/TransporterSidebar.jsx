@@ -27,7 +27,7 @@ const navItems = [
   { name: "Active Shipments", href: "/dashboard/Transporter/active-shipments", icon: Package },
   { name: "My Vehicles", href: "/dashboard/Transporter/my-vehicles", icon: Car },
   { name: "Driver Profiles", href: "/dashboard/Transporter/drivers", icon: UserCircle },
-  { name: "Issue reported", href: "/dashboard/Transporter/issues", icon: AlertCircle },
+  { name: "Issue reported", href: "/dashboard/Transporter/Issue-reported", icon: AlertCircle },
   { name: "Withdraw requests", href: "/dashboard/Transporter/withdraw", icon: Wallet },
 ]; 
 
