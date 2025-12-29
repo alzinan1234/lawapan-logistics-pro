@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 // Withdraws Component
 const WithdrawsComponent = ({ onWithdrawClick }) => {
@@ -104,11 +105,11 @@ const WithdrawsComponent = ({ onWithdrawClick }) => {
         <div className="relative rounded-2xl p-8 mb-8 overflow-hidden ">
           {/* Background Image */}
           <div className="absolute inset-0 w-full h-full z-0 pointer-events-none bg-[#036BB4]">
-            <img
+            <Image
               src="/image/withdraws-bg.png"
               alt="Background pattern"
-              className="rounded-2xl opacity-60 w-full h-full object-cover object-center "
-              style={{ position: 'absolute', inset: 0 }}
+              fill
+              className="rounded-2xl opacity-60 object-cover object-center"
             />
           </div>
           {/* Balance Info */}
@@ -118,7 +119,7 @@ const WithdrawsComponent = ({ onWithdrawClick }) => {
             {/* Withdraw Button - Styled as per request */}
             <button
               onClick={onWithdrawClick}
-              className="flex flex-col justify-center items-center gap-[8.425px] flex-shrink-0 w-[226px] h-[33px] border border-white rounded-[52px] text-white font-medium hover:bg-white hover:text-teal-600 transition-colors"
+              className="flex flex-col justify-center items-center gap-[8.425px] shrink-0 w-[226px] h-[33px] border border-white rounded-[52px] text-white font-medium hover:bg-white hover:text-teal-600 transition-colors"
               style={{ background: 'linear-gradient(180deg, #036BB4 0%,#036BB4 100%)' }}
             >
               Withdraw

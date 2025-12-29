@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { Search, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 
 // Mock data for available bids
@@ -63,11 +64,12 @@ const AvailableBidsPage = () => {
               onClick={() => handleBidClick(bid.id)}
               className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden cursor-pointer hover:shadow-md transition-shadow"
             >
-              <div className="relative">
-                <img
+              <div className="relative h-40">
+                <Image
                   src={bid.image}
                   alt={bid.title}
-                  className="w-full h-40 object-cover"
+                  fill
+                  className="object-cover"
                 />
                 <div className="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-1 rounded text-xs font-medium">
                   {bid.title}

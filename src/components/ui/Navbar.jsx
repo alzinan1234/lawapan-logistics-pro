@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
@@ -29,8 +30,8 @@ const Navbar = () => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link href="/" className="">
-              <div className="">
-                <img className='w-[67px] h-[60px]' src="/web-logo.png" alt="" />
+              <div className="relative w-[67px] h-[60px]">
+                <Image src="/web-logo.png" alt="Logo" fill className="object-contain" />
               </div>
             </Link>
 
